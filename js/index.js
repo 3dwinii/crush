@@ -11,13 +11,11 @@ var xTwo = document.querySelector(".x-two");
 var rl = document.querySelector(".rl");
 var timerId;
 
-var clicked = false;
 
 function showRules() {
     rules.classList.add("rl-vis", "blur");
     rulesBtn.classList.add("blur");
     rules.classList.remove("rl-hid");
-    clicked = true;
     console.log("clicked is true");
     xFlash();
 }
@@ -26,7 +24,6 @@ function hideRules() {
     rules.classList.remove("rl-vis");
     rules.classList.add("rl-hid");
     rulesBtn.classList.remove("blur");
-    clicked = false;
     console.log("clicked is false");
     stopFlash();
 }
@@ -76,22 +73,50 @@ function stopFlash() {
 ******************************  calculate random score *************************
 ********************************************************************************/
 
-var loveScore = Math.floor(Math.random() * 100);
-
-var nameOne = document.querySelector(".name-one").value;
-var nameTwo = document.querySelector(".name-two").value;
 var calcBtn = document.querySelector(".calc");
 
-function calcLove() {
-    calcBtn.addEventListener("click", function(){
-        console.log(nameOne + " and " + nameTwo + " have " + loveScore + "% chance of forming a committed and loving lifelong bond.")
-    });
+// function getNameOne() {
+//     return(document.querySelector(".name-one").value);
+// }
+
+// calcBtn.addEventListener("click", getNameOne);
+
+var nOne;
+var nTwo;
+var score = Math.floor(Math.random() * 100);
+var result = document.querySelector(".result");
+
+function giveResult() {
+    calcBtn.addEventListener("click", function() {
+        nOne = document.querySelector("#name-one").value;
+        nTwo = document.querySelector("#name-two").value;
+        console.log(nOne + " and " + nTwo + " have " + score + "% chance of lurrrve");
+        result.innerHTML = nOne + " and " + nTwo + " have " + score + "% chance of lurrrve";
+    })
 }
 
-calcLove();
-console.log(nameOne)
-console.log
+giveResult();
 
+
+//function runs on event(click) but when the vars are outside the function it takes their value from pageload
+//i.e. empty value
+
+//so basically the value of n needs to be declared inside the function for it to take the current value (not pageload value)
+//OMG NO so it just needs to be declared inside the function, it can be initialised OUTSIDE THE FUNCTIONnnnnn
+
+
+
+//it's showing p as zero value because the funciton is running without value for n.
+//why is the function running??? it's running before the event listener?? running on pageload instead??? wtf
+
+//omg it worked
+//wtf
+
+//
+
+//OKKKK so the reason it returns an empty value is because that's what is in the input field on page load.
+//function needs to be run after input is already in field
+//i.e. ran when btn is clicked.
 
 
 //ok I guess what's gotta happen here is text is input in both fields, then when the button is pressed it 
