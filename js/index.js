@@ -41,14 +41,11 @@ function xFlash() {
     timerId = setInterval(function(){
         setTimeout(function(){
             x.setAttribute("stroke", aqua);
-            console.log("aqua")
         }, 50);
         setTimeout(function(){
             x.setAttribute("stroke", black);
-            console.log("black")
         }, 100)
     }, 100);
-   console.log(timerId);
 }
 
 
@@ -84,50 +81,34 @@ var calcBtn = document.querySelector(".calc");
 var nOne;
 var nTwo;
 var score = Math.floor(Math.random() * 100);
-var result = document.querySelector(".result");
+var res = document.querySelector(".res");
 
 function giveResult() {
     calcBtn.addEventListener("click", function() {
         nOne = document.querySelector("#name-one").value;
         nTwo = document.querySelector("#name-two").value;
         console.log(nOne + " and " + nTwo + " have " + score + "% chance of lurrrve");
-        result.innerHTML = nOne + " and " + nTwo + " have " + score + "% chance of lurrrve";
+        res.classList.remove("res-hid");
+        res.innerHTML = nOne + " and " + nTwo + " have " + score + "% chance of lurrrve";
     })
 }
 
 giveResult();
 
+/******************************************************************************* 
+********************************  make result pop up ***************************
+********************************************************************************/
 
-//function runs on event(click) but when the vars are outside the function it takes their value from pageload
-//i.e. empty value
-
-//so basically the value of n needs to be declared inside the function for it to take the current value (not pageload value)
-//OMG NO so it just needs to be declared inside the function, it can be initialised OUTSIDE THE FUNCTIONnnnnn
-
-
-
-//it's showing p as zero value because the funciton is running without value for n.
-//why is the function running??? it's running before the event listener?? running on pageload instead??? wtf
-
-//omg it worked
-//wtf
-
-//
-
-//OKKKK so the reason it returns an empty value is because that's what is in the input field on page load.
-//function needs to be run after input is already in field
-//i.e. ran when btn is clicked.
-
-
-//ok I guess what's gotta happen here is text is input in both fields, then when the button is pressed it 
-///saves both inputs. THEN it runs the inputs through the formula, THEN it returns the statement.
-//but first we need to isolate the two text inputs.
-
-//actyally, here we are just giving the two names a random number. the names don't matter, they will just 
-//be used as values in the returned statement.
-//still we need to isolate them first.
-
-//try this... add event listener that when calc button is clicked it returns the value of the input field
+//ok so to do this we have to add a new div that is hidden until click (maybe with a timer delay?)
+//and some fun animation of where it comes up from.
+//maybe it's heart shaped and it pops up from the calc btn, hearts floating out around it, and it beats
+//like a heart as it sits there?
+//sit div on top of btn, hidden.  
 
 
 
+/******************************************************************************* 
+********************************  make restart button **************************
+********************************************************************************/
+
+//to do this do i maybe need to put everything in a loadpage function and then on click restart run function again?

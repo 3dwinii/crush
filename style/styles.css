@@ -1,8 +1,12 @@
+* {
+    letter-spacing: 4px;
+    text-align: center;
+    font-family: 'Inconsolata', monospace;
+}
+
 body {
     background-color: pink;
     margin: 0;
-    text-align: center;
-    font-family: 'Inconsolata', monospace;
 }
 
 .inner {
@@ -26,9 +30,10 @@ body {
     left: 50%;
     transform: translateX(-50%);
     border: solid 2px;
-    height: 350px;
+    height: 60%;
     width: 70%;
     font-size: 2rem;
+    padding: 30px;
 }
 
 .ur-name {
@@ -46,11 +51,13 @@ body {
 }
 
 .calc {
+    height: 50px;
+    width: 150px;
     position: absolute;
     top: 250px;
     left: 50%;
     transform: translateX(-50%);
-    padding: 50px 50px;
+    font-size: 1rem;
 }
 
 /**********************************************************************************/
@@ -80,10 +87,14 @@ button {
     box-shadow: 5px 5px 10px pink, -5px -5px 10px pink, 5px -5px 10px pink, -5px 5px 10px pink;
 }
 
-/****************** toggle hidden/visible div ******************/
+/****************** toggle hidden/visible rules div ******************/
+
+.rl {
+    overflow: scroll;
+}
 
 .rl-vis {
-    height: 270px;
+    height: 200px;
     width: 360px;
     padding: 10px;
     background-color: pink;
@@ -105,3 +116,34 @@ span.title {
 .x {
     height: 20px;
 }
+
+/*add result pop up*/
+
+.res {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: solid 2px;
+    height: 100%;
+    width: 100%;
+    font-size: 3rem;
+    background-color: pink;
+    z-index: 1;
+    visibility: visible;
+}
+
+.res-hid {
+    visibility: hidden;
+}
+
+
+/* make input fields pretty */
+
+
+/* make hearts float out when something is clicked */
+
+
+/* make calc button pretty */
+
+
+/* add cut out sexy people on sides */
