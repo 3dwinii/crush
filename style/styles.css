@@ -58,6 +58,7 @@ body {
     left: 50%;
     transform: translateX(-50%);
     font-size: 1rem;
+    border: dashed 2px;
 }
 
 /**********************************************************************************/
@@ -134,6 +135,23 @@ span.title {
 
 .res-hid {
     visibility: hidden;
+}
+
+.resBot {
+     position: absolute;
+     left: 50%;
+     transform: translateX(-50%);
+     font-size: smaller;
+     margin-top: 30px;
+}
+
+.restart {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border: dashed 2px;
+    margin-bottom: 10px;
 }
 
 /* make input fields pretty */
